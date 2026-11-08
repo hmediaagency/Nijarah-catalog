@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>نجارة | Nijarah Furniture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Reem+Kufi:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green:#2f3b26;
+  --ink:#222a1b;
+  --wood:#8a5a24;
+  --paper:#f1f2ec;
+  --line:#d6d8cd;
+  --mute:#68705e;
+  --ph:#e3e4dc;
+}
+* {
+  box-sizing:border-box;
+}
+html {
+  scroll-behavior:smooth;
+}
+body {
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font:400 1rem/1.7 "IBM Plex Sans Arabic",system-ui,sans-serif;
+}
+button {
+  font:inherit;
+  color:inherit;
+  background:none;
+  border:0;
+  padding:0;
+  cursor:pointer;
+}
+:focus-visible {
+  outline:2px solid var(--wood);
+  outline-offset:3px;
+}
+.top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 5vw;
+  border-bottom:1px solid var(--line);
+}
+.logo {
+  height:52px;
+  width:auto;
+  mix-blend-mode:multiply;
+}
+#lang {
+  border:1px solid var(--green);
+  color:var(--green);
+  padding:5px 16px;
+  border-radius:2px;
+  font-weight:500;
+}
+.hero {
+  position:relative;
+  height:clamp(280px,54vh,540px);
+  background:var(--green);
+  overflow:hidden;
+}
+.hero img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:50% 58%;
+  display:block;
+}
+.hero div {
+  position:absolute;
+  inset:auto 0 0 0;
+  padding:64px 5vw 28px;
+  background:linear-gradient(transparent,rgba(30,40,22,.9));
+}
+h1 {
+  margin:0;
+  font:600 clamp(2rem,6vw,3.6rem)/1.2 "Reem Kufi","IBM Plex Sans Arabic",sans-serif;
+  color:#fff;
+}
+.hero p {
+  margin:6px 0 0;
+  color:#e2e7d6;
+  max-width:46ch;
+}
+.tabs {
+  display:flex;
+  gap:28px;
+  padding:20px 5vw 0;
+  border-bottom:1px solid var(--line);
+}
+.tabs button {
+  padding:6px 0 12px;
+  color:var(--mute);
+  border-bottom:3px solid transparent;
+  font-weight:500;
+}
+.tabs button[aria-selected=true] {
+  color:var(--green);
+  border-color:var(--wood);
+}
+.grid {
+  columns:3 290px;
+  column-gap:22px;
+  padding:30px 5vw 20px;
+}
+.card {
+  display:block;
+  width:100%;
+  break-inside:avoid;
+  margin:0 0 30px;
+  text-align:start;
+}
+.card img {
+  display:block;
+  width:100%;
+  height:auto;
+  background:var(--ph);
+}
+.col {
+  display:block;
+  margin-top:10px;
+  font-size:.82rem;
+  color:var(--wood);
+  font-weight:500;
+}
+.nm {
+  display:block;
+  font:500 1.28rem/1.3 "Reem Kufi","IBM Plex Sans Arabic",sans-serif;
+  color:var(--green);
+}
+.alt {
+  display:block;
+  font-size:.9rem;
+  color:var(--mute);
+}
+footer {
+  padding:26px 5vw 40px;
+  border-top:1px solid var(--line);
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 28px;
+  align-items:center;
+  justify-content:space-between;
+  color:var(--mute);
+}
+footer a {
+  color:var(--green);
+  font-weight:600;
+  text-decoration:none;
+}
+dialog {
+  width:min(980px,94vw);
+  max-height:92vh;
+  padding:0;
+  border:0;
+  background:var(--paper);
+  color:var(--ink);
+  overflow:auto;
+}
+dialog::backdrop {
+  background:rgba(28,36,20,.78);
+}
+.sheet {
+  display:grid;
+  grid-template-columns:1.25fr 1fr;
+}
+.view {
+  background:var(--ph);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:300px;
+}
+.view img {
+  max-width:100%;
+  max-height:82vh;
+  display:block;
+}
+.side {
+  padding:26px 24px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.thumbs {
+  display:flex;
+  gap:8px;
+  margin-top:6px;
+}
+.thumbs button {
+  width:64px;
+  height:64px;
+  border:2px solid transparent;
+  opacity:.75;
+}
+.thumbs button[aria-current=true] {
+  border-color:var(--wood);
+  opacity:1;
+}
+.thumbs img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.d {
+  margin:4px 0 8px;
+}
+.ask {
+  display:inline-block;
+  background:var(--green);
+  color:#fff;
+  padding:12px 22px;
+  text-decoration:none;
+  font-weight:600;
+  text-align:center;
+}
+.x {
+  position:absolute;
+  inset-block-start:10px;
+  inset-inline-end:12px;
+  width:38px;
+  height:38px;
+  background:var(--paper);
+  font-size:1.4rem;
+  line-height:1;
+}
+@media(max-width:720px) {
+  .sheet {
+    grid-template-columns:1fr;
+  }
+  .view img {
+    max-height:56vh;
+  }
+  .side {
+    padding:18px;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior:auto;
+  }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <img class="logo" src="images/logo.png" alt="Nijarah Furniture">
+  <button id="lang" type="button">English</button>
+</header>
+
+<section class="hero">
+  <img src="images/full/ghaim-bed-1.jpg" alt="">
+  <div><h1 id="h1"></h1><p id="lead"></p></div>
+</section>
+
+<nav class="tabs" id="tabs" role="tablist"></nav>
+<main class="grid" id="grid"></main>
+
+<footer>
+  <span id="foot"></span>
+  <a id="tel" href="https://wa.me/201031140010" dir="ltr">01031140010</a>
+</footer>
+
+<dialog id="dlg" aria-labelledby="dn">
+  <button class="x" id="close" type="button" aria-label="إغلاق">×</button>
+  <div class="sheet">
+    <div class="view"><img id="big" alt=""></div>
+    <div class="side">
+      <span class="col" id="dc"></span>
+      <h2 class="nm" id="dn" style="font-size:1.7rem;margin:0"></h2>
+      <span class="alt" id="da"></span>
+      <p class="d" id="dd"></p>
+      <a class="ask" id="ask" target="_blank" rel="noopener"></a>
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+var PHONE="201031140010";
+var C={
+  ivory:["مجموعة العاج","Ivory collection"],
+  honey:["مجموعة العسل","Honey collection"],
+  wave:["مجموعة الموجة","Wave collection"],
+  marmar:["سفرة المرمر","Marmar dining"],
+  layl:["سفرة ليل","Layl dining"],
+  mocha:["سفرة موكا","Mocha dining"]
+};
+var P=[
+ {id:"pearl-bed",cat:"bed",col:"ivory",n:2,r:"3/4",ar:"سرير لؤلؤ",en:"Pearl Bed",
+  dAr:"سرير بظهر منجّد وإضاءات جانبية، مع بنش في نهايته وكومودينوهات بدرجين بنفس اللون العاجي.",
+  dEn:"Upholstered headboard with side lights, a bench at the foot and two-drawer nightstands in ivory."},
+ {id:"hilal-vanity",cat:"bed",col:"ivory",n:1,r:"3/4",ar:"تسريحة هلال",en:"Hilal Vanity",
+  dAr:"تسريحة بمرآة دائرية بإطار مضيء، ووحدة جانبية بثلاثة أدراج، وكرسي منجّد.",
+  dEn:"Round mirror with a lit edge, a three-drawer side unit and an upholstered stool."},
+ {id:"sukoon-wardrobe",cat:"bed",col:"ivory",n:1,r:"4/3",ar:"دولاب سكون",en:"Sukoon Wardrobe",
+  dAr:"دولاب بأبواب سحّاب: مرآة برونزية وألواح سادة وباب بحزوز رأسية.",
+  dEn:"Sliding-door wardrobe with bronze mirror panels, plain panels and a ribbed door."},
+ {id:"ghaim-bed",cat:"bed",col:"honey",n:2,r:"4/3",ar:"سرير غيم",en:"Ghaim Bed",
+  dAr:"سرير بظهر مبطّن على صفّين وإطار منجّد، مع بنش وكومودينوهات بحواف دائرية.",
+  dEn:"Two-row padded headboard and upholstered frame, with a bench and rounded-edge nightstands."},
+ {id:"qaws-vanity",cat:"bed",col:"honey",n:2,r:"4/3",ar:"تسريحة قوس",en:"Qaws Vanity",
+  dAr:"تسريحة بمرآة مقوّسة مضيئة، وأدراج بحواف دائرية وتابوريه منجّد، ومعها مرآة وقوف برفوف.",
+  dEn:"Arched lit mirror, rounded drawers and an upholstered stool, plus a standing mirror with shelves."},
+ {id:"arz-wardrobe",cat:"bed",col:"honey",n:1,r:"3/4",ar:"دولاب أرز",en:"Arz Wardrobe",
+  dAr:"دولاب بستة أبواب: أربعة بتشطيب خشبي وبابان زجاج بإضاءة LED.",
+  dEn:"Six-door wardrobe: four wood-finish doors and two glass doors with LED lighting."},
+ {id:"mawja",cat:"bed",col:"wave",n:1,r:"4/3",ar:"دولاب وتسريحة موجة",en:"Mawja Wardrobe & Vanity",
+  dAr:"دولاب بأبواب زجاج وجوانب خشبية منحنية، مع تسريحة بإضاءة LED وتابوريه.",
+  dEn:"Glass-door wardrobe with curved wooden sides, plus an LED-lit vanity and stool."},
+ {id:"marmar-table",cat:"dine",col:"marmar",n:2,r:"4/3",ar:"ترابيزة سفرة المرمر",en:"Marmar Dining Table",
+  dAr:"ترابيزة بسطح من المرمر والخشب، ومعها ستة كراسي منجّدة بظهر خشبي.",
+  dEn:"Marble and wood table top, with six upholstered chairs with wooden backs."},
+ {id:"marmar-buffet",cat:"dine",col:"marmar",n:1,r:"4/3",ar:"بوفيه المرمر",en:"Marmar Buffet",
+  dAr:"بوفيه بسطح رخام وأدراج وأبواب بعروق خشب واضحة، مع مرآتين على الحائط.",
+  dEn:"Marble-top buffet with drawers and doors in bold wood grain, with two wall mirrors."},
+ {id:"marmar-cabinet",cat:"dine",col:"marmar",n:2,r:"3/4",ar:"نيش المرمر",en:"Marmar Display Cabinet",
+  dAr:"نيش بباب زجاج داكن وقاعدة دائرية ودرج سفلي.",
+  dEn:"Display cabinet with a dark glass door, a round base and a bottom drawer."},
+ {id:"layl-table",cat:"dine",col:"layl",n:2,r:"3/4",ar:"ترابيزة سفرة ليل",en:"Layl Dining Table",
+  dAr:"ترابيزة بسطح زجاج داكن، مع كراسي منجّدة بظهر منحني.",
+  dEn:"Dark glass-top table with upholstered chairs with curved backs."},
+ {id:"layl-buffet",cat:"dine",col:"layl",n:1,r:"4/3",ar:"بوفيه ليل",en:"Layl Buffet",
+  dAr:"بوفيه بأبواب ودرج بمقابض ذهبية، ومرآتان بشكل حر.",
+  dEn:"Buffet with doors and a drawer with gold handles, and two free-form mirrors."},
+ {id:"layl-cabinet",cat:"dine",col:"layl",n:1,r:"3/4",ar:"نيش ليل",en:"Layl Display Cabinet",
+  dAr:"نيش بباب زجاج ودرجين سفليين بمقابض ذهبية.",
+  dEn:"Glass-door display cabinet with two bottom drawers and gold handles."},
+ {id:"mocha-table",cat:"dine",col:"mocha",n:2,r:"4/3",ar:"ترابيزة سفرة موكا",en:"Mocha Dining Table",
+  dAr:"ترابيزة بسطح من الرخام والخشب، مع كراسي بتنجيد بيج.",
+  dEn:"Marble and wood table top with beige upholstered chairs."},
+ {id:"mocha-buffet",cat:"dine",col:"mocha",n:2,r:"4/3",ar:"بوفيه موكا",en:"Mocha Buffet",
+  dAr:"بوفيه بسطح رخام وثلاثة أدراج وأبواب زجاج، مع مرايا دائرية.",
+  dEn:"Marble-top buffet with three drawers and glass doors, with round mirrors."},
+ {id:"mocha-cabinet",cat:"dine",col:"mocha",n:1,r:"3/4",ar:"نيش موكا",en:"Mocha Display Cabinet",
+  dAr:"نيش طويل بباب زجاج داكن وتفاصيل ذهبية بالداخل.",
+  dEn:"Tall display cabinet with a dark glass door and gold details inside."}
+];
+var T={
+ ar:{all:"الكل",bed:"غرف النوم",dine:"السفرة",ask:"اطلب أو استفسر على واتساب",close:"إغلاق",
+     h1:"نجارة للأثاث المنزلي",lead:"غرف نوم وسفرة. اختر القطعة وتواصل معنا على واتساب.",
+     foot:"للطلب والاستفسار",lang:"English",msg:function(p){return "مرحباً، أرغب في الاستفسار عن "+p.ar+" ("+p.en+") من كتالوج نجارة."}},
+ en:{all:"All",bed:"Bedrooms",dine:"Dining",ask:"Order or ask on WhatsApp",close:"Close",
+     h1:"Nijarah Furniture",lead:"Bedrooms and dining rooms. Pick a piece and message us on WhatsApp.",
+     foot:"To order or ask",lang:"العربية",msg:function(p){return "Hello, I'd like to ask about "+p.en+" ("+p.ar+") from the Nijarah catalog."}}
+};
+var lang="ar",cat="all",cur=null;
+var $=function(i){return document.getElementById(i)};
+function name(p,l){return l==="ar"?p.ar:p.en}
+function other(p,l){return l==="ar"?p.en:p.ar}
+function render(){
+  var t=T[lang],ix=lang==="ar"?0:1;
+  document.documentElement.lang=lang;
+  document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+  $("h1").textContent=t.h1;$("lead").textContent=t.lead;$("foot").textContent=t.foot;
+  $("lang").textContent=t.lang;$("close").setAttribute("aria-label",t.close);
+  $("tabs").innerHTML=["all","bed","dine"].map(function(k){
+    return '<button role="tab" type="button" data-k="'+k+'" aria-selected="'+(k===cat)+'">'+t[k]+'</button>'}).join("");
+  $("grid").innerHTML=P.filter(function(p){return cat==="all"||p.cat===cat}).map(function(p){
+    return '<button class="card" type="button" data-id="'+p.id+'"><img src="images/thumb/'+p.id+'-1.jpg" alt="'+name(p,lang)+'" loading="lazy" style="aspect-ratio:'+p.r+'">'+
+      '<span class="col">'+C[p.col][ix]+'</span><span class="nm">'+name(p,lang)+'</span><span class="alt">'+other(p,lang)+'</span></button>'}).join("");
+  if(cur&&$("dlg").open)fill(cur);
+}
+function show(p,k){
+  $("big").src="images/full/"+p.id+"-"+k+".jpg";
+  var b=$("thumbs").children;
+  for(var i=0;i<b.length;i++)b[i].setAttribute("aria-current",String(i+1===k));
+}
+function fill(p){
+  var t=T[lang],ix=lang==="ar"?0:1;
+  $("dc").textContent=C[p.col][ix];$("dn").textContent=name(p,lang);$("da").textContent=other(p,lang);
+  $("dd").textContent=lang==="ar"?p.dAr:p.dEn;$("big").alt=name(p,lang);
+  $("ask").textContent=t.ask;
+  $("ask").href="https://wa.me/"+PHONE+"?text="+encodeURIComponent(t.msg(p));
+  var h="";
+  if(p.n>1)for(var i=1;i<=p.n;i++)h+='<button type="button" data-k="'+i+'" aria-label="'+i+'"><img src="images/thumb/'+p.id+'-'+i+'.jpg" alt=""></button>';
+  $("thumbs").innerHTML=h;
+  show(p,1);
+}
+$("grid").addEventListener("click",function(e){
+  var b=e.target.closest(".card");if(!b)return;
+  cur=P.filter(function(p){return p.id===b.dataset.id})[0];
+  fill(cur);$("dlg").showModal();
+});
+$("thumbs").addEventListener("click",function(e){
+  var b=e.target.closest("button");if(b&&cur)show(cur,+b.dataset.k);
+});
+$("tabs").addEventListener("click",function(e){
+  var b=e.target.closest("button");if(!b)return;cat=b.dataset.k;render();
+});
+$("lang").addEventListener("click",function(){lang=lang==="ar"?"en":"ar";render()});
+$("close").addEventListener("click",function(){$("dlg").close()});
+$("dlg").addEventListener("click",function(e){if(e.target===$("dlg"))$("dlg").close()});
+render();
+</script>
+</body>
+</html>
